@@ -1,12 +1,15 @@
 import React, { Component } from "react"
 import styled, { keyframes, ThemeProvider } from "styled-components"
+
 import { theme, Button } from "../theme/globalStyle"
-import BlockInfo from "./BlockInfo"
+import BlockContainer from "./blockInfo/BlockContainer"
 
 const logo = 'https://seeklogo.com/images/E/eos-logo-9E0494F783-seeklogo.com.png'
 
 const AppWrapper = styled.div`
   text-align: center;
+  background: #f7f7f7;
+  height: 100vh;
 `
 
 const AppHeader = styled.div`
@@ -49,7 +52,7 @@ class App extends Component {
             <AppLogo src={logo} alt="logo" />
             <AppTitle>EOS BLOCK EXPLORER v1.0</AppTitle>
           </AppHeader>
-            <BlockInfo/>
+            <BlockContainer/>
             <Button onClick={this.fetchBlockInfo}>LOAD</Button>
         </AppWrapper>
       </ThemeProvider>

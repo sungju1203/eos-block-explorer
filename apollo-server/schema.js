@@ -17,6 +17,7 @@ type Block {
 }
 type Query {
   block: Block
+  blockss(blockNumber: Int!): Block
   blocks: [Block] @cacheControl(maxAge: 15)
 }
 `

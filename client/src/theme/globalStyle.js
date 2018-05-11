@@ -28,6 +28,11 @@ export const Button = styled.button`
   }
 `
 
+export const InfoText = styled.div`
+  color: ${props => props.theme.success};
+  margin-left: 0.4rem;
+`
+
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto');
   body {

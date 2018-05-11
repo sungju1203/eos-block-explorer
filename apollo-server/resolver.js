@@ -13,6 +13,14 @@ const resolvers = {
         console.error(e)
       }
     },
+    blockss: async (root, { blockNumber }) => {
+      try {
+        const block = await eos.getBlock(blockNumber)
+        return block
+      } catch (e) {
+        console.error(e)
+      }
+    },
     blocks: async () => {
       try {
         let blocks = []
@@ -21,12 +29,12 @@ const resolvers = {
         if (blockNumber < 10) { // only if blockNumber is less than 10
           for (let i = 1; i < blockNumber + 1; i++) {
             let block = await eos.getBlock(i)
-            blocks.push(block)
+            blocks.unshift(block)
           }
         } else { // normal iteration
           for (let i = blockNumber; i > blockNumber - 10; i--) {
             let block = await eos.getBlock(i)
-            blocks.unshift(block)
+            blocks.push(block)
           }
         }
         console.log('BLOCKS!!!',blocks.length, blocks);
