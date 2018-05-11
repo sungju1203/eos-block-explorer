@@ -4,11 +4,11 @@ import gql from "graphql-tag"
 
 const GET_BLOCK_INFO = gql`
   {
-    block {
+    blocks {
       block_num
       timestamp
       producer
-    } 
+    }
   }
 `
 
@@ -20,12 +20,9 @@ const BlockInfo = () => (
       console.info("Data: ", data)
       if (loading) return <p>Loading...</p>
       if (error) return <p>Error :(</p>
-      return <div> {data.block.block_num} / {data.block.timestamp} / {data.block.producer} </div>
-      // return data.rates.map(({ id, block_num }) => (
-      //   <div key={currency}>
-      //     <p>{`${id}: ${block_num}`}</p>
-      //   </div>
-      // ))
+      return data.blocks.map(({ block_num, timestamp, producer }) => (
+        <div key={block_num}> {block_num} / {timestamp} / {producer} </div>
+      ))
     }}
   </Query>
 )
