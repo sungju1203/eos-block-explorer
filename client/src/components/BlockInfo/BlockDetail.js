@@ -16,7 +16,7 @@ const TextWrapper = styled.div`
 
 `
 
-const BlockInfo = ({ timestamp, producer }) => (
+const BlockDetail = ({ timestamp, producer }) => (
   <Wrapper>
     <TextWrapper>
       produced by
@@ -29,4 +29,4 @@ const BlockInfo = ({ timestamp, producer }) => (
   </Wrapper>
 )
 
-export default BlockInfo
+export default BlockDetail

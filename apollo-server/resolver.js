@@ -13,14 +13,6 @@ const resolvers = {
         console.error(e)
       }
     },
-    blockss: async (root, { blockNumber }) => {
-      try {
-        const block = await eos.getBlock(blockNumber)
-        return block
-      } catch (e) {
-        console.error(e)
-      }
-    },
     blocks: async () => {
       try {
         let blocks = []

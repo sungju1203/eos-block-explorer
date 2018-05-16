@@ -15,17 +15,20 @@ export const theme = {
 
 export const Button = styled.button`
   font-size: 1rem;
-  border-radius: 5px;
   padding: 0.25rem 1rem;
   margin: 0 1 rem;
+  height: 30px;
   background: transparent;
   color: ${props => props.theme.primary};
   border: 2px solid ${props => props.theme.primary};
   cursor: pointer;
   &:hover {
-    transform: translateY(1px);
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    background: ${props => props.theme.dark};
+    color: ${props => props.theme.white};
   }
+`
+export const H3 = styled.h3`
+  font-size: 1rem;
 `
 
 export const InfoText = styled.div`
@@ -39,6 +42,7 @@ injectGlobal`
     padding: 0;
     margin: 0;
     font-family: Roboto, sans-serif;
+    background: #f7f7f7;
   }
 
   h1 {

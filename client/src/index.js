@@ -8,9 +8,9 @@ import { createPersistedQueryLink } from "apollo-link-persisted-queries" //
 import { createHttpLink } from "apollo-link-http" // 
 import { InMemoryCache } from "apollo-cache-inmemory"
 
-import App from "./components/App"
-import registerServiceWorker from "./registerServiceWorker"
-import { defaults, resolvers } from "./resolvers"
+import App from "components/App"
+import registerServiceWorker from "registerServiceWorker"
+import { defaults, resolvers } from "resolvers"
 
 const typeDefs = `
 type Block {
