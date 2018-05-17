@@ -54,4 +54,7 @@ BlockDatacard.propTypes = {
   input_transactions: PropTypes.array.isRequired,
 }
 
+InfoWrapper.displayName = 'InfoWrapper'
+BlockDetail.displayName = 'BlockDetail'
+
 export default BlockDatacard

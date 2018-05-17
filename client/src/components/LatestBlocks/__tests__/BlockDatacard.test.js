@@ -1,6 +1,5 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import styled from "styled-components"
 import { mount } from "enzyme"
 
 import { fromTheme } from "helper"
@@ -23,25 +22,9 @@ test('Block Datacard expands', () => {
     ref_block_prefix: 3229556813,
   }
 
-  const InfoWrapper = styled.div`
-    background: ${fromTheme('white')};
-    display: flex;
-    margin-top: 10px;
-    &:hover {
-      cursor: pointer;
-    }
-  `
-
-  const showDetail = jest.fn()
-
   const datacard = mount(<BlockDatacard {...props} />)
-
-  const detail = renderer.create(
-    <InfoWrapper/>,
-  )
-
-  detail.simulate('click')
-
-  expect(showDetail).toBeCalledWith(1)
-
+  const InfoWrapper = datacard.find('InfoWrapper')
+  InfoWrapper.instance().showDetail = jest.fn()
+  datacard.update()
+  // expect(datacard.instance().showDetail).toBeCalledWith()
 })
