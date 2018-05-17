@@ -11,11 +11,10 @@ type Block {
   producer: String!,
   schedule_version: Int,
   producer_signature: String!,
-  regions: [String],
   input_transactions: [String],
   id: String!,
   block_num: Float!,
-  ref_block_prefix: Float
+  ref_block_prefix: Float!
 }
 type Query {
   block: Block!

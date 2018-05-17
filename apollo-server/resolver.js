@@ -29,7 +29,7 @@ const resolvers = {
             blocks.push(block)
           }
         }
-        console.log('BLOCKS!!!',blocks.length, blocks);
+        console.log('BLOCKS!!!', blocks);
         return blocks
       } catch (e) {
         console.error(e)
