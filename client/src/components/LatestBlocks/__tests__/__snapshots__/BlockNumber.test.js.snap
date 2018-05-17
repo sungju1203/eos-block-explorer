@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Block Number 1`] = `
+<div
+  className="sc-bdVaJa jGVUjf"
+>
+  <div>
+     Block 
+    1437576
+     
+  </div>
+  <div
+    className="sc-bwzfXH jPuMXn"
+  >
+     
+    0015ef887c1badff4d207fc03af2ceb78f935ba380e45b71b601901ddb7e508d
+     
+  </div>
+</div>
+`;

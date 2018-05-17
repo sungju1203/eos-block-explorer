@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Block Info 1`] = `
+<div
+  className="sc-bxivhb czdAHg"
+>
+  <div
+    className="sc-ifAKCX WOpjk"
+  >
+    produced by  
+    <div
+      className="sc-htpNat iELaDV"
+    >
+      eosio
+    </div>
+  </div>
+  <div
+    className="sc-ifAKCX WOpjk"
+  >
+    at  
+    <div
+      className="sc-htpNat iELaDV"
+    >
+      2018-05-17T04:34:36.500
+    </div>
+  </div>
+  <div
+    className="sc-ifAKCX WOpjk"
+  >
+    <div
+      className="sc-htpNat iELaDV"
+    >
+      0
+    </div>
+      transactions
+  </div>
+</div>
+`;

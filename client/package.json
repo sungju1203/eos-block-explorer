@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "apollo-boost": "^0.1.6",
+    "apollo-cache-inmemory": "^1.2.1",
+    "apollo-client": "^2.3.1",
+    "apollo-link": "^1.2.2",
+    "apollo-link-error": "^1.0.9",
+    "apollo-link-http": "^1.5.4",
     "apollo-link-persisted-queries": "^0.2.0",
     "eosjs": "^6.1.11",
     "graphql": "^0.13.2",
@@ -21,5 +26,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "^16.3.2"
   }
 }

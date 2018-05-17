@@ -3,7 +3,7 @@ import styled, { keyframes, ThemeProvider } from "styled-components"
 
 import { theme } from "theme/globalStyle"
 import { fromTheme } from "helper"
-import BlockContainer from "components/BlockInfo"
+import BlockContainer from "components/LatestBlocks"
 import logo from "images/eos-logo.svg"
 
 const AppWrapper = styled.div`
@@ -11,10 +11,12 @@ const AppWrapper = styled.div`
 `
 
 const AppHeader = styled.div`
-  height: 8rem;
-  padding: 1rem;
-  color: ${fromTheme("white")};
   background-color: ${fromTheme("dark")};
+  color: ${fromTheme("white")};
+  display: flex;
+  justify-content: center;
+  height: 10%;
+  padding: 1rem;
 `
 
 const AppTitle = styled.h1`
@@ -37,8 +39,9 @@ const rotate360 = keyframes`
 
 const AppLogo = styled.img`
   height: 80px;
+  animation: ${rotate360} infinite 1.5s linear;
   &:hover {
-    animation: ${rotate360} infinite 1.5s linear;
+    animation: ${rotate360} infinite .8s linear;
   }
 `
 
@@ -52,6 +55,7 @@ class App extends Component {
           <AppHeader>
             <AppLogo src={logo} alt="logo" />
             <AppTitle>EOS BLOCK EXPLORER v1.0</AppTitle>
+            <AppLogo src={logo} alt="logo" />
           </AppHeader>
           <AppContent>
             <BlockContainer/>

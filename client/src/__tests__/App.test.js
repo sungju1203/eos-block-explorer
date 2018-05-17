@@ -1,5 +1,5 @@
 import React from "react"
-import { render } from "react-dom"
+import ReactDOM from "react-dom"
 import { ApolloProvider } from "react-apollo"
 import ApolloClient from "apollo-client"
 import { InMemoryCache, defaultDataIdFromObject } from "apollo-cache-inmemory"
@@ -8,7 +8,6 @@ import { onError } from "apollo-link-error"
 import { ApolloLink } from "apollo-link"
 
 import App from "components/App"
-import registerServiceWorker from "registerServiceWorker"
 
 const link = ApolloLink.from([
   onError(({ graphQLErrors, networkError }) => {
@@ -43,10 +42,12 @@ const client = new ApolloClient({
   cache
 })
 
-render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>
-, document.getElementById('root'))
-
-registerServiceWorker()
+it('renders without crashing', () => {
+  const div = document.createElement('div')
+  ReactDOM.render(
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  , div)
+  ReactDOM.unmountComponentAtNode(div)
+})
