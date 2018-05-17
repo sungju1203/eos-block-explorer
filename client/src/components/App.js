@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import styled, { keyframes, ThemeProvider } from "styled-components"
 
 import { theme } from "theme/globalStyle"
+import { fromTheme } from "helper"
 import BlockContainer from "components/BlockInfo"
 import logo from "images/eos-logo.svg"
 
@@ -12,12 +13,17 @@ const AppWrapper = styled.div`
 const AppHeader = styled.div`
   height: 8rem;
   padding: 1rem;
-  color: ${props => props.theme.white};
-  background-color: ${props => props.theme.dark};
+  color: ${fromTheme("white")};
+  background-color: ${fromTheme("dark")};
 `
 
 const AppTitle = styled.h1`
   font-weight: 900;
+`
+
+const AppContent = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 const rotate360 = keyframes`
@@ -47,7 +53,9 @@ class App extends Component {
             <AppLogo src={logo} alt="logo" />
             <AppTitle>EOS BLOCK EXPLORER v1.0</AppTitle>
           </AppHeader>
+          <AppContent>
             <BlockContainer/>
+          </AppContent>
         </AppWrapper>
       </ThemeProvider>
     )

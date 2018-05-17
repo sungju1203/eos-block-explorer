@@ -1,4 +1,5 @@
 import styled, { injectGlobal } from "styled-components"
+import { fromTheme } from "helper"
 
 export const theme = {
   primary: '#41403e',
@@ -19,12 +20,12 @@ export const Button = styled.button`
   margin: 0 1 rem;
   height: 30px;
   background: transparent;
-  color: ${props => props.theme.primary};
-  border: 2px solid ${props => props.theme.primary};
+  color: ${fromTheme("primary")};
+  border: 2px solid ${fromTheme("primary")};
   cursor: pointer;
   &:hover {
-    background: ${props => props.theme.dark};
-    color: ${props => props.theme.white};
+    background: ${fromTheme("dark")};
+    color: ${fromTheme("white")};
   }
 `
 export const H3 = styled.h3`
@@ -32,7 +33,7 @@ export const H3 = styled.h3`
 `
 
 export const InfoText = styled.div`
-  color: ${props => props.theme.success};
+  color: ${fromTheme("success")};
   margin-left: 0.4rem;
 `
 

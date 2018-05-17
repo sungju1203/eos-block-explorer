@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { InfoText } from "../../theme/globalStyle"
+import { InfoText } from "theme/globalStyle"
 
 const Wrapper = styled.div`
   /* text-align: start; */

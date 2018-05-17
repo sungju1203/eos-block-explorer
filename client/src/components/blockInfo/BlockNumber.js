@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import { fromTheme } from "helper"
 
 const Wrapper = styled.div`
-  background: ${props => props.theme.primary};
-  color: ${props => props.theme.white};
+  background: ${fromTheme("primary")};
+  color: ${fromTheme("white")};
   display: flex;
   justify-content: center;
   align-items: center;

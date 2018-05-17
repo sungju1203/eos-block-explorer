@@ -4,10 +4,11 @@ import gql from "graphql-tag"
 import styled from "styled-components"
 import moment from "moment"
 
-import BlockNumber from "./BlockNumber"
-import BlockDetail from "./BlockDetail"
+import { fromTheme } from "helper"
 import { Button, H3 } from "theme/globalStyle"
 import blockIcon from "images/block-icon.png"
+import BlockNumber from "./BlockNumber"
+import BlockDetail from "./BlockDetail"
 
 const GET_BLOCK_INFO = gql`
   {
@@ -20,11 +21,11 @@ const GET_BLOCK_INFO = gql`
 `
 
 const Wrapper = styled.div`
-  width: 80vw;
+  width: 50vw;
 `
 
 const Header = styled.div`
-  background: ${props => props.theme.white};
+  background: ${fromTheme("white")};
   padding: 5px;
   display: flex;
   justify-content: space-between;
@@ -44,7 +45,7 @@ const BlockIcon = styled.img`
 `
 
 const InfoWrapper = styled.div`
-  background: ${props => props.theme.white};
+  background: ${fromTheme("white")};
   display: flex;
   margin: 0.5rem 0;
   &:hover {
@@ -59,7 +60,7 @@ class BlockContainer extends Component {
     this.setState({ isLoaded: true })
   }
 
-  showDetail = async () => {
+  showDetail = () => {
     
   }
 
@@ -83,10 +84,10 @@ class BlockContainer extends Component {
                 }
               </Header>
               {isLoaded &&
-                data.blocks.map(({ block_num, timestamp, producer }) => (
-                  <InfoWrapper key={block_num} onClick={() => this.showDetail()} >
+                data.block.map(({ block_num, timestamp, producer }) => (
+                  <InfoWrapper key={block_num} onClick={this.showDetail()} >
                     <BlockNumber blockNumber={block_num} />
-                    <BlockDetail timestamp={moment(timestamp).format("LLL")} producer={producer} />
+                    <BlockDetail timestamp={moment(timestamp).format('LLL')} producer={producer} />
                   </InfoWrapper>
                 ))
               }
