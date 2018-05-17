@@ -14,8 +14,12 @@ Client will hit graphql gateway in express server to fetch block info.
 ``` bash
 $ docker run --name nodeos -p 8888:8888 -p 9876:9876 -t eosio/eos nodeosd.sh arg1 arg2
 ```
+2. Clone repo
+``` bash
+$ git clone git@github.com:sungju1203/eos-block-explorer.git
+```
 
-2. In both `apollo-server` and `client` folders, Run
+3. In both `apollo-server` and `client` folders, Run
 ``` bash
 $ yarn install
 $ yarn start
